@@ -52,7 +52,7 @@ describe("health check", () => {
                 },
                 "nodes": []
             },
-            "archivist": {
+            "promethei": {
                 "version": "v0.1.0\nv0.1.1\nv0.1.2\nv0.1.3\nv0.1.4\nv0.1.5\nv0.1.6\nv0.1.7",
                 "revision": "2fb7031e"
             }
@@ -80,7 +80,7 @@ describe("health check", () => {
                 },
                 "nodes": []
             },
-            "archivist": {
+            "promethei": {
                 "version": "v0.1.0\nv0.1.1\nv0.1.2\nv0.1.3\nv0.1.4\nv0.1.5\nv0.1.6\nv0.1.7",
                 "revision": "2fb7031e"
             }
@@ -109,7 +109,7 @@ describe("health check", () => {
                 },
                 "nodes": []
             },
-            "archivist": {
+            "promethei": {
                 "version": "v0.1.0\nv0.1.1\nv0.1.2\nv0.1.3\nv0.1.4\nv0.1.5\nv0.1.6\nv0.1.7",
                 "revision": "2fb7031e"
             }
@@ -138,7 +138,7 @@ describe("health check", () => {
                 },
                 "nodes": []
             },
-            "archivist": {
+            "promethei": {
                 "version": "v0.1.0\nv0.1.1\nv0.1.2\nv0.1.3\nv0.1.4\nv0.1.5\nv0.1.6\nv0.1.7",
                 "revision": "2fb7031e"
             }

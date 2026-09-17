@@ -3,10 +3,10 @@ import {
   Cell,
   Tooltip,
   WebFileIcon,
-} from "@durability-labs/archivist-app-components";
+} from "@promethei-project/promethei-app-components";
 import "./FileCell.css";
 import { WebStorage } from "../../utils/web-storage";
-import { ArchivistDataContent } from "@durability-labs/archivist-sdk-js";
+import { PrometheiDataContent } from "@promethei-project/promethei-sdk-js";
 import { FilesUtils } from "../Files/files.utils";
 
 type FileMetadata = {
@@ -19,7 +19,7 @@ type Props = {
   requestId: string;
   purchaseCid: string;
   index: number;
-  data: ArchivistDataContent[];
+  data: PrometheiDataContent[];
   onMetadata?: (requestId: string, metadata: FileMetadata) => void;
 };
 

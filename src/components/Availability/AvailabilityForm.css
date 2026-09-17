@@ -35,13 +35,13 @@
 
     &[aria-invalid] {
       .input-group > div > div > div:nth-child(2) {
-        border-color: var(-archivist-color-error);
+        border-color: var(-promethei-color-error);
       }
 
       label,
       svg,
       select {
-        color: var(-archivist-color-error);
+        color: var(-promethei-color-error);
       }
     }
   }
@@ -58,7 +58,7 @@
 
     a {
       cursor: pointer;
-      color: var(--archivist-color-primary);
+      color: var(--promethei-color-primary);
       top: 4px;
       right: 4px;
       position: absolute;

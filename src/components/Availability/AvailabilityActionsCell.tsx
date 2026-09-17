@@ -1,16 +1,16 @@
 import "./AvailabilityActionsCell.css";
-import { ArchivistAvailability } from "@durability-labs/archivist-sdk-js/async";
-import { ButtonIcon, Cell } from "@durability-labs/archivist-app-components";
+import { PrometheiAvailability } from "@promethei-project/promethei-sdk-js/async";
+import { ButtonIcon, Cell } from "@promethei-project/promethei-app-components";
 import EditIcon from "../../assets/icons/edit.svg?react";
 
 type Props = {
-  availability: ArchivistAvailability;
+  availability: PrometheiAvailability;
 };
 
 export function AvailabilityActionsCell({ availability }: Props) {
   const onEditClick = async () => {
     document.dispatchEvent(
-      new CustomEvent("archivistavailabilityedit", { detail: availability })
+      new CustomEvent("prometheiavailabilityedit", { detail: availability })
     );
   };
 

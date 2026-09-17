@@ -1,4 +1,4 @@
-import { TabSortState } from "@durability-labs/archivist-app-components";
+import { TabSortState } from "@promethei-project/promethei-app-components";
 
 export type PeerNode = {
     nodeId: string;

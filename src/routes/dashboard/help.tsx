@@ -23,9 +23,9 @@ export const HelpRoute = () => {
       <div>
         <HelpIcon />
         <div>
-          <h2>What's Archivist?</h2>
+          <h2>What's Promethei?</h2>
           <p>
-            Archivist is a decentralised data storage platform that provides
+            Promethei is a decentralised data storage platform that provides
             exceptionally strong censorship resistance and durability
             guarantees.
           </p>
@@ -37,7 +37,7 @@ export const HelpRoute = () => {
         <div>
           <h2>What is the purpose of this web application?</h2>
           <p>
-            This application allows you to interact with the Archivist Marketplace
+            This application allows you to interact with the Promethei Marketplace
             network in a user-friendly manner.
           </p>
         </div>
@@ -46,9 +46,9 @@ export const HelpRoute = () => {
       <div>
         <HelpIcon />
         <div>
-          <h2>Can Archivist handle big files?</h2>
+          <h2>Can Promethei handle big files?</h2>
           <p>
-            Archivist can handle very large files, which is its main purpose.
+            Promethei can handle very large files, which is its main purpose.
             However, for this UI, the files used should not be too large.
           </p>
         </div>
@@ -73,10 +73,10 @@ export const HelpRoute = () => {
           <p>
             Please create a new issue on our GitHub repository&nbsp;
             <a
-              href="https://github.com/durability-labs/archivist-app"
+              href="https://github.com/promethei-project/promethei-app"
               className="help-link"
               target="_blank">
-              https://github.com/durability-labs/archivist-app
+              https://github.com/promethei-project/promethei-app
             </a>
             .
           </p>
@@ -86,7 +86,7 @@ export const HelpRoute = () => {
       <div>
         <HelpIcon />
         <div>
-          <h2>How can I build and run Archivist?</h2>
+          <h2>How can I build and run Promethei?</h2>
           <p>
             For instructions, please visit{" "}
             <a

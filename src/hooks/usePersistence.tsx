@@ -1,14 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
-import { ArchivistSdk } from "../sdk/archivist";
+import { PrometheiSdk } from "../sdk/promethei";
 import { Promises } from "../utils/promises";
 
 const report = false;
 
-export function usePersistence(isArchivistOnline: boolean) {
+export function usePersistence(isPrometheiOnline: boolean) {
   const { data, isError, isFetching, refetch } = useQuery({
     queryKey: [],
     queryFn: async () => {
-      return ArchivistSdk.marketplace()
+      return PrometheiSdk.marketplace()
         .activeSlots()
         .then((data) => Promises.rejectOnError(data, report));
     },
@@ -16,7 +16,7 @@ export function usePersistence(isArchivistOnline: boolean) {
     refetchInterval: 5000,
 
     // Enable only when the use has an internet connection
-    enabled: !!isArchivistOnline,
+    enabled: !!isPrometheiOnline,
 
     // No need to retry because we defined a refetch interval
     retry: false,

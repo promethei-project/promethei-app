@@ -3,10 +3,10 @@ import {
   Row,
   Table,
   TabSortState,
-} from "@durability-labs/archivist-app-components";
+} from "@promethei-project/promethei-app-components";
 import { Bytes } from "../../utils/bytes";
 import { AvailabilityActionsCell } from "./AvailabilityActionsCell";
-import { ArchivistAvailability, ArchivistNodeSpace } from "@durability-labs/archivist-sdk-js/async";
+import { PrometheiAvailability, PrometheiNodeSpace } from "@promethei-project/promethei-sdk-js/async";
 import { Times } from "../../utils/times";
 import { Fragment, useState } from "react";
 import { AvailabilityReservations } from "./AvailabilityReservations";
@@ -20,14 +20,14 @@ import { AvailabilityUtils } from "./availability.utils";
 
 type Props = {
   // onEdit: () => void;
-  space: ArchivistNodeSpace;
+  space: PrometheiNodeSpace;
   availabilities: AvailabilityWithSlots[];
 };
 
 type SortFn = (a: AvailabilityWithSlots, b: AvailabilityWithSlots) => number;
 
 export function AvailabilitiesTable({ availabilities, space }: Props) {
-  const [availability, setAvailability] = useState<ArchivistAvailability | null>(
+  const [availability, setAvailability] = useState<PrometheiAvailability | null>(
     null
   );
   const [details, setDetails] = useState<string[]>([]);

@@ -4,26 +4,26 @@ import {
   Spinner,
   Table,
   TabSortState,
-} from "@durability-labs/archivist-app-components";
+} from "@promethei-project/promethei-app-components";
 import { Times } from "../../utils/times";
 import { useState } from "react";
 import { FileCell } from "../../components/FileCellRender/FileCell";
 import { useData } from "../../hooks/useData";
 import { useQuery } from "@tanstack/react-query";
-import { ArchivistSdk } from "../../sdk/archivist";
+import { PrometheiSdk } from "../../sdk/promethei";
 import { Promises } from "../../utils/promises";
-import { ArchivistPurchase } from "@durability-labs/archivist-sdk-js";
+import { PrometheiPurchase } from "@promethei-project/promethei-sdk-js";
 import { TruncateCell } from "../TruncateCell/TruncateCell";
 import { CustomStateCellRender } from "../CustomStateCellRender/CustomStateCellRender";
 import { PurchaseUtils } from "./purchase.utils";
 
-type SortFn = (a: ArchivistPurchase, b: ArchivistPurchase) => number;
+type SortFn = (a: PrometheiPurchase, b: PrometheiPurchase) => number;
 
 export function PurchasesTable() {
   const content = useData();
   const { data, isPending } = useQuery({
     queryFn: () =>
-      ArchivistSdk.marketplace()
+      PrometheiSdk.marketplace()
         .purchases()
         .then((s) => Promises.rejectOnError(s)),
     queryKey: ["purchases"],

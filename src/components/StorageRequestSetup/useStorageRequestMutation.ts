@@ -1,12 +1,12 @@
-import { ArchivistCreateStorageRequestInput } from "@durability-labs/archivist-sdk-js";
-import { ArchivistSdk } from "../../sdk/archivist";
+import { PrometheiCreateStorageRequestInput } from "@promethei-project/promethei-sdk-js";
+import { PrometheiSdk } from "../../sdk/promethei";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { Promises } from "../../utils/promises";
 import { WebStorage } from "../../utils/web-storage";
 import {
   StepperAction,
   StepperState,
-} from "@durability-labs/archivist-app-components";
+} from "@promethei-project/promethei-app-components";
 import { Dispatch, useState } from "react";
 
 export function useStorageRequestMutation(
@@ -17,8 +17,8 @@ export function useStorageRequestMutation(
   const queryClient = useQueryClient();
 
   const { mutateAsync } = useMutation({
-    mutationFn: (input: ArchivistCreateStorageRequestInput) =>
-      ArchivistSdk.marketplace()
+    mutationFn: (input: PrometheiCreateStorageRequestInput) =>
+      PrometheiSdk.marketplace()
         .createStorageRequest(input)
         .then((s) => Promises.rejectOnError(s)),
     onSuccess: async () => {

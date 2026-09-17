@@ -1,4 +1,4 @@
-import { Input, Tooltip } from "@durability-labs/archivist-app-components";
+import { Input, Tooltip } from "@promethei-project/promethei-app-components";
 import "./CardNumbers.css";
 import { ChangeEvent, useState } from "react";
 import { classnames } from "../../utils/classnames";

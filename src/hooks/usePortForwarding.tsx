@@ -1,12 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import { Errors } from "../utils/errors";
-import { ArchivistDebugInfo } from "@durability-labs/archivist-sdk-js";
+import { PrometheiDebugInfo } from "@promethei-project/promethei-sdk-js";
 import { PortForwardingUtil } from "./port-forwarding.util";
 import { HealthCheckUtils } from "../components/HealthChecks/health-check.utils";
 
 type PortForwardingResponse = { reachable: boolean };
 
-export function usePortForwarding(info: ArchivistDebugInfo | undefined) {
+export function usePortForwarding(info: PrometheiDebugInfo | undefined) {
   const { data, isFetching, refetch } = useQuery({
     queryFn: (): Promise<PortForwardingResponse> => {
       const port = PortForwardingUtil.getTcpPort(info!);

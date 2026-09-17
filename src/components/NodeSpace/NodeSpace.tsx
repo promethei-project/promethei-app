@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import Loader from "../../assets/loader.svg";
-import { ArchivistSdk } from "../../sdk/archivist";
-import { SpaceAllocation } from "@durability-labs/archivist-app-components";
+import { PrometheiSdk } from "../../sdk/promethei";
+import { SpaceAllocation } from "@promethei-project/promethei-app-components";
 import { Promises } from "../../utils/promises";
 import "./NodeSpace.css";
 
@@ -15,7 +15,7 @@ const defaultSpace = {
 export function NodeSpace() {
   const { data: space, isPending } = useQuery({
     queryFn: () =>
-      ArchivistSdk.data()
+      PrometheiSdk.data()
         .space()
         .then((s) => Promises.rejectOnError(s)),
     queryKey: ["space"],

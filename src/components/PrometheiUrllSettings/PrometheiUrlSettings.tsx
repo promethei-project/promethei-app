@@ -1,15 +1,15 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
-import { Button, Input, Toast } from "@durability-labs/archivist-app-components";
-import { ArchivistSdk } from "../../sdk/archivist";
+import { Button, Input, Toast } from "@promethei-project/promethei-app-components";
+import { PrometheiSdk } from "../../sdk/promethei";
 
-export function ArchivistUrlSettings() {
+export function PrometheiUrlSettings() {
   const queryClient = useQueryClient();
-  const [url, setUrl] = useState(ArchivistSdk.url);
+  const [url, setUrl] = useState(PrometheiSdk.url);
   const [isInvalid, setIsInvalid] = useState(false);
   const [toast, setToast] = useState({ time: 0, message: "" });
   const { mutateAsync } = useMutation({
-    mutationFn: (url: string) => ArchivistSdk.updateURL(url),
+    mutationFn: (url: string) => PrometheiSdk.updateURL(url),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["spr"] });
 
@@ -36,7 +36,7 @@ export function ArchivistUrlSettings() {
       <div className="settings-input">
         <Input
           id="url"
-          label="Archivist node URL"
+          label="Promethei node URL"
           onChange={onChange}
           value={url}
           isInvalid={isInvalid}

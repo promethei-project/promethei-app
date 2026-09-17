@@ -1,9 +1,9 @@
 {
-  "name": "@durability-labs/archivist-app",
-  "description": "App for Archivist decentralized storage network.",
+  "name": "@promethei-project/promethei-app",
+  "description": "App for Promethei decentralized storage network.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/durability-labs/archivist-app"
+    "url": "https://github.com/promethei-project/promethei-app"
   },
   "version": "0.0.1",
   "type": "module",
@@ -19,15 +19,15 @@
     "knip": "knip"
   },
   "keywords": [
-    "Archivist",
+    "Promethei",
     "Javascript",
     "Components",
     "UI",
     "React"
   ],
   "dependencies": {
-    "@durability-labs/archivist-app-components": "^0.0.1",
-    "@durability-labs/archivist-sdk-js": "^0.0.2",
+    "@promethei-project/promethei-app-components": "^0.0.1",
+    "@promethei-project/promethei-sdk-js": "^0.0.2",
     "@sentry/browser": "^8.32.0",
     "@sentry/react": "^8.31.0",
     "@tanstack/react-query": "^5.51.15",
@@ -67,7 +67,7 @@
   "engines": {
     "node": ">=18"
   },
-  "author": "Archivist team",
+  "author": "Promethei team",
   "readme": "README.md",
   "license": "MIT"
 }

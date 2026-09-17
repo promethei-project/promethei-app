@@ -3,10 +3,10 @@ import {
   useStepperReducer,
   Button,
   Modal,
-} from "@durability-labs/archivist-app-components";
+} from "@promethei-project/promethei-app-components";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AvailabilityForm } from "./AvailabilityForm";
-import { ArchivistNodeSpace } from "@durability-labs/archivist-sdk-js";
+import { PrometheiNodeSpace } from "@promethei-project/promethei-sdk-js";
 import { AvailabilityConfirm } from "./AvailabilityConfirmation";
 import { WebStorage } from "../../utils/web-storage";
 import { AvailabilityState } from "./types";
@@ -20,7 +20,7 @@ import HostIcon from "../../assets/icons/host.svg?react";
 import { Times } from "../../utils/times";
 
 type Props = {
-  space: ArchivistNodeSpace;
+  space: PrometheiNodeSpace;
   hasLabel?: boolean;
   className?: string;
 };
@@ -124,10 +124,10 @@ export function AvailabilityEdit({
   }, [editAvailabilityValue, dispatch]);
 
   useEffect(() => {
-    document.addEventListener("archivistavailabilitycreate", onOpen, false);
+    document.addEventListener("prometheiavailabilitycreate", onOpen, false);
 
     return () =>
-      document.removeEventListener("archivistavailabilitycreate", onOpen);
+      document.removeEventListener("prometheiavailabilitycreate", onOpen);
   }, [onOpen]);
 
   const onEdit = useCallback(
@@ -162,9 +162,9 @@ export function AvailabilityEdit({
   );
 
   useEffect(() => {
-    document.addEventListener("archivistavailabilityedit", onEdit, false);
+    document.addEventListener("prometheiavailabilityedit", onEdit, false);
 
-    return () => document.removeEventListener("archivistavailabilityedit", onEdit);
+    return () => document.removeEventListener("prometheiavailabilityedit", onEdit);
   }, [onEdit, dispatch]);
 
   const onClose = () => dispatch({ type: "close" });

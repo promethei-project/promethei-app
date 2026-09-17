@@ -15,13 +15,13 @@ import RefreshIcon from "../../assets/icons/refresh.svg?react";
 import TokensIcon from "../../assets/icons/tokens.svg?react";
 import FavoriteIcon from "../../assets/icons/favorite.svg?react";
 import ContactsIcon from "../../assets/icons/contacts.svg?react";
-import ArchivistTokenIcon from "../../assets/icons/archivisttoken.svg?react";
+import PrometheiTokenIcon from "../../assets/icons/prometheitoken.svg?react";
 import EthereumIcon from "../../assets/icons/ethereum.svg?react";
 import {
   ButtonIcon,
   TabProps,
   Tabs,
-} from "@durability-labs/archivist-app-components";
+} from "@promethei-project/promethei-app-components";
 
 export const WalletRoute = () => {
   const tabs: TabProps[] = [
@@ -83,9 +83,9 @@ export const WalletRoute = () => {
           <Tabs tabs={tabs} tabIndex={0} onTabChange={() => {}}></Tabs>
           <ul>
             <li>
-              <ButtonIcon Icon={ArchivistTokenIcon} disabled></ButtonIcon>
+              <ButtonIcon Icon={PrometheiTokenIcon} disabled></ButtonIcon>
               <div>
-                <small>Archivist</small>
+                <small>Promethei</small>
                 <p>123,223 ARC</p>
               </div>
             </li>

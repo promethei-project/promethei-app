@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import "./StorageRequestReview.css";
-import { Alert } from "@durability-labs/archivist-app-components";
+import { Alert } from "@promethei-project/promethei-app-components";
 import { CardNumbers } from "../CardNumbers/CardNumbers";
 import WarningIcon from "../../assets/icons/warning.svg?react";
 import { StorageRequest, StorageRequestComponentProps } from "./types";
@@ -107,7 +107,7 @@ export function StorageRequestReview({
     const n = Number(nodes);
 
     if (isInvalidConstrainst(n, storageRequest.tolerance)) {
-      return "The data does not match Archivist constraint";
+      return "The data does not match Promethei constraint";
     }
 
     return "";
@@ -127,7 +127,7 @@ export function StorageRequestReview({
     }
 
     if (isInvalidConstrainst(storageRequest.nodes, n)) {
-      return "The data does not match Archivist constraint.";
+      return "The data does not match Promethei constraint.";
     }
 
     return "";

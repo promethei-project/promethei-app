@@ -1,4 +1,4 @@
-import { ArchivistDebugInfo, SafeValue, ArchivistError } from "@durability-labs/archivist-sdk-js"
+import { PrometheiDebugInfo, SafeValue, PrometheiError } from "@promethei-project/promethei-sdk-js"
 
 export const PortForwardingUtil = {
     check: (ip: string, port: number) => {
@@ -10,21 +10,21 @@ export const PortForwardingUtil = {
             .then((res) => res.json())
     },
 
-    getTcpPort(info: ArchivistDebugInfo): SafeValue<number> {
+    getTcpPort(info: PrometheiDebugInfo): SafeValue<number> {
         if (info.addrs.length === 0) {
-            return { error: true, data: new ArchivistError("Not existing address") }
+            return { error: true, data: new PrometheiError("Not existing address") }
         }
 
         const parts = info.addrs[0].split("/")
 
         if (parts.length < 2) {
-            return { error: true, data: new ArchivistError("Address misformatted") }
+            return { error: true, data: new PrometheiError("Address misformatted") }
         }
 
         const port = parseInt(parts[parts.length - 1], 10)
 
         if (isNaN(port)) {
-            return { error: true, data: new ArchivistError("Port misformatted") }
+            return { error: true, data: new PrometheiError("Port misformatted") }
         }
 
         return { error: false, data: port }

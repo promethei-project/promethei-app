@@ -1,4 +1,4 @@
-import { Placeholder } from "@durability-labs/archivist-app-components";
+import { Placeholder } from "@promethei-project/promethei-app-components";
 import ErrorCircleIcon from "../../assets/icons/error-circle.svg?react";
 
 type Props = {

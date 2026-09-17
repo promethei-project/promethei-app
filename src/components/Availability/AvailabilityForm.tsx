@@ -3,7 +3,7 @@ import {
   InputGroup,
   SpaceAllocation,
   Tooltip,
-} from "@durability-labs/archivist-app-components";
+} from "@promethei-project/promethei-app-components";
 import { ChangeEvent, useEffect, useState } from "react";
 import "./AvailabilityForm.css";
 import { AvailabilityComponentProps } from "./types";

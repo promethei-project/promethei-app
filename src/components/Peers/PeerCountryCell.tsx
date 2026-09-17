@@ -1,4 +1,4 @@
-import { Cell } from "@durability-labs/archivist-app-components";
+import { Cell } from "@promethei-project/promethei-app-components";
 import "./PeerCountryCell.css";
 import { PeerGeo, PeerNode, PeerUtils } from "./peers.utils";
 

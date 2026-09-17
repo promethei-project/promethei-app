@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { COPY_DURATION } from "../../utils/constants";
-import { Button } from "@durability-labs/archivist-app-components";
+import { Button } from "@promethei-project/promethei-app-components";
 import CopyIcon from "../../assets/icons/copy.svg?react";
 
 type CopyButtonProps = {

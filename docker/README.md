@@ -1,8 +1,8 @@
-# Archivist App Docker images
+# Promethei App Docker images
 
 ## Description
 
- We are shipping Archivist App as a Docker image as well.
+ We are shipping Promethei App as a Docker image as well.
 
  [Dockerfile](Dockerfile) is using multi-stage build and we use `alpine` image to speed up the build and to minimize the final Docker image size we are using a lightweight Nginx image.
 
@@ -14,23 +14,23 @@
 
  2. Clone repository
     ```shell
-    git clone https://github.com/durability-labs/archivist-app
-    cd archivist-app
+    git clone https://github.com/promethei-project/promethei-app
+    cd promethei-app
     ```
 
  3. Build the image
     ```shell
     # Variables
-    VITE_ARCHIVIST_API_URL=<Default Archivist API URL>
+    VITE_PROMETHEI_API_URL=<Default Promethei API URL>
     VITE_GEO_IP_URL=<GeoIP API URL>
 
     # Build
     docker build \
-      --build-arg VITE_ARCHIVIST_API_URL=${VITE_ARCHIVIST_API_URL} \
+      --build-arg VITE_PROMETHEI_API_URL=${VITE_PROMETHEI_API_URL} \
       --build-arg VITE_GEO_IP_URL=${VITE_GEO_IP_URL} \
       --no-cache \
       -f docker/Dockerfile \
-      -t archivist-app:local .
+      -t promethei-app:local .
     ```
 
 
@@ -40,9 +40,9 @@
  ```shell
  docker run \
    --rm \
-   --name archivist-app \
+   --name promethei-app \
    -p 3000:80 \
-   durabilitylabs/archivist-app:latest
+   durabilitylabs/promethei-app:latest
  ```
 
  Access UI on http://localhost:3000.
@@ -51,8 +51,8 @@
  ```shell
  docker run \
    --rm \
-   --name archivist-app \
+   --name promethei-app \
    --net=host \
    -e 'APP_PORT=3000' \
-   durabilitylabs/archivist-app:latest
+   durabilitylabs/promethei-app:latest
  ```

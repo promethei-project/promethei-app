@@ -1,4 +1,4 @@
-import { Spinner } from "@durability-labs/archivist-app-components";
+import { Spinner } from "@promethei-project/promethei-app-components";
 import { useDebug } from "../../hooks/useDebug";
 
 const throwOnError = true;

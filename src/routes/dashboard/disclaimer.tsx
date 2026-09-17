@@ -22,7 +22,7 @@ export const DisclaimerRoute = () => (
     <br />
 
     <p>
-      By accessing and using this website, you agree that we, Durability labs/Archivist
+      By accessing and using this website, you agree that we, Durability labs/Promethei
       and it's contributors, will not be liable for any direct, indirect, incidental, or
       consequential damages arising from the use of, or inability to use, this website.
       Any data, content, or interactions on this site are non-binding and should not be

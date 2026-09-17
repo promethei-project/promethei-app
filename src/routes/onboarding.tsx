@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Modal } from "@durability-labs/archivist-app-components";
+import { Modal } from "@promethei-project/promethei-app-components";
 import { OnBoardingLayout } from "../components/OnBoarding/OnBoardingLayout";
 import AlphaIcon from "../assets/icons/alpha.svg?react";
 import AlphaText from "../assets/icons/alphatext.svg?react";
@@ -34,10 +34,10 @@ export function OnBoardingRoute() {
           <section className="main">
             <h1>
               Hello,
-              <br /> Welcome to <b>Archivist</b> <b>Vault</b>
+              <br /> Welcome to <b>Promethei</b> <b>Vault</b>
             </h1>
             <p>
-              Archivist is a durable, decentralised data storage protocol, created
+              Promethei is a durable, decentralised data storage protocol, created
               so the world community can preserve its most important knowledge
               without risk of censorship.
             </p>
@@ -73,7 +73,7 @@ export function OnBoardingRoute() {
 
               <p>
                 By accessing and using this website, you agree that we, Durability
-                labs/Archivist and it's contributors, will not be liable for any
+                labs/Promethei and it's contributors, will not be liable for any
                 direct, indirect, incidental, or consequential damages arising from
                 the use of, or inability to use, this website.
                 Any data, content, or interactions on this site are non-binding and

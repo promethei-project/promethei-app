@@ -1,7 +1,7 @@
 import {
   StepperAction,
   StepperState,
-} from "@durability-labs/archivist-app-components";
+} from "@promethei-project/promethei-app-components";
 import { Dispatch } from "react";
 
 export type StorageDurabilityStepValue = {

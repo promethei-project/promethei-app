@@ -1,7 +1,7 @@
-import { TabSortState } from "@durability-labs/archivist-app-components";
+import { TabSortState } from "@promethei-project/promethei-app-components";
 import { AvailabilityState, AvailabilityWithSlots } from "./types";
 import { GB, TB } from "../../utils/constants";
-import { ArchivistNodeSpace } from "@durability-labs/archivist-sdk-js";
+import { PrometheiNodeSpace } from "@promethei-project/promethei-sdk-js";
 
 export const AvailabilityUtils = {
   sortById:
@@ -40,7 +40,7 @@ export const AvailabilityUtils = {
   toUnit(bytes: number, unit: "gb" | "tb") {
     return bytes / this.unitValue(unit || "gb");
   },
-  maxValue(space: ArchivistNodeSpace) {
+  maxValue(space: PrometheiNodeSpace) {
     // Remove 1 byte to allow to create an availability with the max space possible
     return (
       space.quotaMaxBytes - space.quotaReservedBytes - space.quotaUsedBytes - 1

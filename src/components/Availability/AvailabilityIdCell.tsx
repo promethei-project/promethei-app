@@ -1,5 +1,5 @@
 import { Strings } from "../../utils/strings";
-import { Cell } from "@durability-labs/archivist-app-components";
+import { Cell } from "@promethei-project/promethei-app-components";
 import { Bytes } from "../../utils/bytes";
 import { AvailabilityWithSlots } from "./types";
 import AvailbilityIcon from "../../assets/icons/availability.svg?react";

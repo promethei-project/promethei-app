@@ -1,23 +1,23 @@
-import { ArchivistLogLevel } from "@durability-labs/archivist-sdk-js";
+import { PrometheiLogLevel } from "@promethei-project/promethei-sdk-js";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
-import { ArchivistSdk } from "../../sdk/archivist";
+import { PrometheiSdk } from "../../sdk/promethei";
 import "./LogLevel.css";
 import {
   Button,
   Select,
   Toast,
-} from "@durability-labs/archivist-app-components";
+} from "@promethei-project/promethei-app-components";
 import { Promises } from "../../utils/promises";
 import LogsIcon from "../../assets/icons/logs.svg?react";
 import SaveIcon from "../../assets/icons/save.svg?react";
 
 export function LogLevel() {
   const queryClient = useQueryClient();
-  const [level, setLevel] = useState<ArchivistLogLevel>("DEBUG");
+  const [level, setLevel] = useState<PrometheiLogLevel>("DEBUG");
   const { mutateAsync, isPending } = useMutation({
-    mutationFn: (level: ArchivistLogLevel) =>
-      ArchivistSdk.debug()
+    mutationFn: (level: PrometheiLogLevel) =>
+      PrometheiSdk.debug()
         .setLogLevel(level)
         .then((s) => Promises.rejectOnError(s)),
     onSuccess: () => {
@@ -45,7 +45,7 @@ export function LogLevel() {
   function onChange(e: React.FormEvent<HTMLSelectElement>) {
     const value = e.currentTarget.value;
     if (value) {
-      setLevel(value as ArchivistLogLevel);
+      setLevel(value as PrometheiLogLevel);
     }
   }
 

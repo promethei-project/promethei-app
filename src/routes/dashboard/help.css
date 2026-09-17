@@ -38,7 +38,7 @@
   }
 
   a {
-    color: var(--archivist-color-primary);
+    color: var(--promethei-color-primary);
     text-decoration: underline;
   }
 }

@@ -1,5 +1,5 @@
-import { TabSortState } from "@durability-labs/archivist-app-components";
-import { ArchivistDataContent } from "@durability-labs/archivist-sdk-js";
+import { TabSortState } from "@promethei-project/promethei-app-components";
+import { PrometheiDataContent } from "@promethei-project/promethei-sdk-js";
 
 const archiveMimetypes = [
   "application/zip",
@@ -38,7 +38,7 @@ export const FilesUtils = {
     return "document";
   },
   sortByName:
-    (state: TabSortState) => (a: ArchivistDataContent, b: ArchivistDataContent) => {
+    (state: TabSortState) => (a: PrometheiDataContent, b: PrometheiDataContent) => {
       const {
         manifest: { filename: afilename },
       } = a;
@@ -55,12 +55,12 @@ export const FilesUtils = {
             .localeCompare((bfilename || "").toLocaleLowerCase());
     },
   sortBySize:
-    (state: TabSortState) => (a: ArchivistDataContent, b: ArchivistDataContent) =>
+    (state: TabSortState) => (a: PrometheiDataContent, b: PrometheiDataContent) =>
       state === "desc"
         ? b.manifest.datasetSize - a.manifest.datasetSize
         : a.manifest.datasetSize - b.manifest.datasetSize,
   sortByDate:
-    (state: TabSortState) => (a: ArchivistDataContent, b: ArchivistDataContent) => {
+    (state: TabSortState) => (a: PrometheiDataContent, b: PrometheiDataContent) => {
       const aUploadedAt = FilesUtils.getUploadedAt(a.cid);
       const bUploadedAt = FilesUtils.getUploadedAt(b.cid);
 
@@ -95,7 +95,7 @@ export const FilesUtils = {
       ? filters.filter((f) => f !== filter)
       : [...filters, filter],
   listInFolder(
-    files: ArchivistDataContent[],
+    files: PrometheiDataContent[],
     folders: [string, string[]][],
     index: number
   ) {
@@ -103,7 +103,7 @@ export const FilesUtils = {
       ? files
       : files.filter((file) => folders[index - 1][1].includes(file.cid));
   },
-  applyFilters(files: ArchivistDataContent[], filters: string[]) {
+  applyFilters(files: PrometheiDataContent[], filters: string[]) {
     return files.filter(
       (file) =>
         filters.length === 0 ||
@@ -129,7 +129,7 @@ export const FilesUtils = {
   },
 };
 
-export type ArchivistFileMetadata = {
+export type PrometheiFileMetadata = {
   type: string;
   name: string;
 };

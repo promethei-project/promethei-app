@@ -2,10 +2,10 @@ import {
   Button,
   SpaceAllocationItem,
   Spinner,
-} from "@durability-labs/archivist-app-components";
+} from "@promethei-project/promethei-app-components";
 import { useQuery } from "@tanstack/react-query";
 import { Promises } from "../../utils/promises";
-import { ArchivistSdk } from "../../sdk/archivist";
+import { PrometheiSdk } from "../../sdk/promethei";
 import "./availabilities.css";
 import { AvailabilitiesTable } from "../../components/Availability/AvailabilitiesTable";
 import { AvailabilityEdit } from "../../components/Availability/AvailabilityEdit";
@@ -34,14 +34,14 @@ export function AvailabilitiesRoute() {
       AvailabilityWithSlots[]
     >({
       queryFn: () =>
-        ArchivistSdk.marketplace()
+        PrometheiSdk.marketplace()
           .availabilities()
           .then((s) => Promises.rejectOnError(s))
           .then((res) => res.sort((a, b) => b.totalSize - a.totalSize))
           .then((data) =>
             Promise.all(
               data.map((a) =>
-                ArchivistSdk.marketplace()
+                PrometheiSdk.marketplace()
                   .reservations(a.id)
                   .then((res) => {
                     if (res.error) {
@@ -85,7 +85,7 @@ export function AvailabilitiesRoute() {
     // Error will be catched in ErrorBounday
     const { data: space = defaultSpace } = useQuery({
       queryFn: () =>
-        ArchivistSdk.data()
+        PrometheiSdk.data()
           .space()
           .then((s) => Promises.rejectOnError(s)),
       queryKey: ["space"],
@@ -131,7 +131,7 @@ export function AvailabilitiesRoute() {
     }
 
     const onOpenAvailabilities = () =>
-      document.dispatchEvent(new CustomEvent("archivistavailabilitycreate", {}));
+      document.dispatchEvent(new CustomEvent("prometheiavailabilitycreate", {}));
 
     return (
       <div className="availabilities">

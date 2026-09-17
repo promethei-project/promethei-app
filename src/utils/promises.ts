@@ -1,4 +1,4 @@
-import { SafeValue } from "@durability-labs/archivist-sdk-js";
+import { SafeValue } from "@promethei-project/promethei-sdk-js";
 import { Errors } from "./errors";
 
 export const Promises = {

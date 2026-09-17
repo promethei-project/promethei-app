@@ -1,16 +1,16 @@
 .card-number {
-  --archivist-card-number-label-color: rgb(123, 123, 123);
-  --archivist-card-number-unit-color: rgba(150, 150, 150, 1);
+  --promethei-card-number-label-color: rgb(123, 123, 123);
+  --promethei-card-number-unit-color: rgba(150, 150, 150, 1);
 
   &[aria-invalid] {
-    --archivist-card-number-label-color: var(-archivist-color-error);
-    --archivist-card-number-unit-color: var(-archivist-color-error);
+    --promethei-card-number-label-color: var(-promethei-color-error);
+    --promethei-card-number-unit-color: var(-promethei-color-error);
   }
 
   position: relative;
 
   label {
-    color: var(--archivist-card-number-label-color);
+    color: var(--promethei-card-number-label-color);
   }
 
   input {
@@ -30,7 +30,7 @@
   }
 
   svg {
-    color: var(--archivist-card-number-unit-color);
+    color: var(--promethei-card-number-unit-color);
   }
 
   span {
@@ -39,7 +39,7 @@
     font-weight: 400;
     line-height: 16px;
     text-align: left;
-    color: var(--archivist-card-number-unit-color);
+    color: var(--promethei-card-number-unit-color);
     position: absolute;
     top: 54px;
     right: 48px;

@@ -1,12 +1,12 @@
 import {
   StepperAction,
   StepperState,
-} from "@durability-labs/archivist-app-components";
+} from "@promethei-project/promethei-app-components";
 import {
-  ArchivistAvailability,
-  ArchivistNodeSpace,
-  ArchivistReservation,
-} from "@durability-labs/archivist-sdk-js";
+  PrometheiAvailability,
+  PrometheiNodeSpace,
+  PrometheiReservation,
+} from "@promethei-project/promethei-sdk-js";
 import { Dispatch } from "react";
 
 export type AvailabilityState = {
@@ -23,14 +23,14 @@ export type AvailabilityState = {
 export type AvailabilityComponentProps = {
   dispatch: Dispatch<StepperAction>;
   state: StepperState;
-  space: ArchivistNodeSpace;
+  space: PrometheiNodeSpace;
   onAvailabilityChange: (data: Partial<AvailabilityState>) => void;
   availability: AvailabilityState;
   error: Error | null;
   editAvailabilityValue?: number;
 };
 
-export type AvailabilityWithSlots = ArchivistAvailability & {
+export type AvailabilityWithSlots = PrometheiAvailability & {
   name: string;
-  slots: ArchivistReservation[];
+  slots: PrometheiReservation[];
 };

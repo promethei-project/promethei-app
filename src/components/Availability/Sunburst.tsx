@@ -1,4 +1,4 @@
-import { ArchivistNodeSpace } from "@durability-labs/archivist-sdk-js";
+import { PrometheiNodeSpace } from "@promethei-project/promethei-sdk-js";
 import { Times } from "../../utils/times";
 import { Strings } from "../../utils/strings";
 import { Bytes } from "../../utils/bytes";
@@ -14,7 +14,7 @@ import { AvailabilityUtils } from "./availability.utils";
 
 type Props = {
   availabilities: AvailabilityWithSlots[];
-  space: ArchivistNodeSpace;
+  space: PrometheiNodeSpace;
 };
 
 import { TooltipComponent } from "echarts/components";
@@ -193,7 +193,7 @@ export function Sunburst({ availabilities, space }: Props) {
     //     params.dataIndex === 0 ? null : availabilities[index - 1].id;
 
     //   document.dispatchEvent(
-    //     new CustomEvent("archivistavailabilityid", {
+    //     new CustomEvent("prometheiavailabilityid", {
     //       detail,
     //     })
     //   );

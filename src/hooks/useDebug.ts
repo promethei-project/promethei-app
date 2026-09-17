@@ -1,11 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
-import { ArchivistSdk } from "../sdk/archivist";
+import { PrometheiSdk } from "../sdk/promethei";
 import { Promises } from "../utils/promises";
 
 export function useDebug(throwOnError: boolean) {
     const { data, isError, isPending, refetch, isSuccess, isFetching } = useQuery({
         queryFn: () =>
-            ArchivistSdk.debug()
+            PrometheiSdk.debug()
                 .info()
                 .then((s) => Promises.rejectOnError(s)),
 

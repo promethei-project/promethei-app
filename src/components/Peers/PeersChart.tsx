@@ -6,12 +6,12 @@ type Props = {
 };
 
 type CustomCSSProperties = React.CSSProperties & {
-  "--archivist-peers-degrees": number;
+  "--promethei-peers-degrees": number;
 };
 
 export function PeersChart({ actives, degrees }: Props) {
   const style: CustomCSSProperties = {
-    "--archivist-peers-degrees": degrees,
+    "--promethei-peers-degrees": degrees,
   };
 
   return (

@@ -3,18 +3,18 @@ import {
   Modal,
   SpaceAllocation,
   Spinner,
-} from "@durability-labs/archivist-app-components";
+} from "@promethei-project/promethei-app-components";
 import "./AvailabilityReservations.css";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { ArchivistSdk } from "../../sdk/archivist";
+import { PrometheiSdk } from "../../sdk/promethei";
 import { Promises } from "../../utils/promises";
-import { ArchivistAvailability } from "@durability-labs/archivist-sdk-js";
+import { PrometheiAvailability } from "@promethei-project/promethei-sdk-js";
 import { useEffect } from "react";
 import { ErrorPlaceholder } from "../ErrorPlaceholder/ErrorPlaceholder";
 import { AvailabilityUtils } from "./availability.utils";
 
 type Props = {
-  availability: ArchivistAvailability | null;
+  availability: PrometheiAvailability | null;
   open: boolean;
   onClose: () => unknown;
 };
@@ -38,7 +38,7 @@ export function AvailabilityReservations({
     error,
   } = useQuery({
     queryFn: () =>
-      ArchivistSdk.marketplace()
+      PrometheiSdk.marketplace()
         .reservations(availability!.id)
         .then((s) => Promises.rejectOnError(s)),
     queryKey: ["reservations"],

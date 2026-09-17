@@ -6,9 +6,9 @@ import { Dispatch, useState } from "react";
 import {
   StepperAction,
   StepperState,
-} from "@durability-labs/archivist-app-components";
-import { ArchivistSdk } from "../../sdk/archivist";
-import { ArchivistAvailabilityCreateResponse } from "@durability-labs/archivist-sdk-js";
+} from "@promethei-project/promethei-app-components";
+import { PrometheiSdk } from "../../sdk/promethei";
+import { PrometheiAvailabilityCreateResponse } from "@promethei-project/promethei-sdk-js";
 import { Times } from "../../utils/times";
 import { AvailabilityUtils } from "./availability.utils";
 
@@ -31,9 +31,9 @@ export function useAvailabilityMutation(
     }: AvailabilityState) => {
       const fn: (
         input: Omit<AvailabilityState, "totalSizeUnit" | "durationUnit">
-      ) => Promise<"" | ArchivistAvailabilityCreateResponse> = input.id
+      ) => Promise<"" | PrometheiAvailabilityCreateResponse> = input.id
         ? (input) => {
-            return ArchivistSdk.marketplace()
+            return PrometheiSdk.marketplace()
               .updateAvailability({
                 totalSize: input.totalSize,
                 duration: input.duration,
@@ -44,7 +44,7 @@ export function useAvailabilityMutation(
               .then((s) => Promises.rejectOnError(s));
           }
         : (input) =>
-            ArchivistSdk.marketplace()
+            PrometheiSdk.marketplace()
               .createAvailability(input)
               .then((s) => Promises.rejectOnError(s));
 

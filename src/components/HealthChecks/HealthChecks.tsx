@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 import { useDebug } from "../../hooks/useDebug";
 import { usePersistence } from "../../hooks/usePersistence";
 import { usePortForwarding } from "../../hooks/usePortForwarding";
-import { Input, Spinner } from "@durability-labs/archivist-app-components";
+import { Input, Spinner } from "@promethei-project/promethei-app-components";
 import { classnames } from "../../utils/classnames";
 import "./HealthChecks.css";
-import { ArchivistSdk } from "../../sdk/archivist";
+import { PrometheiSdk } from "../../sdk/promethei";
 import { HealthCheckUtils } from "./health-check.utils";
 import SuccessCircleIcon from "../../assets/icons/success-circle.svg?react";
 import ErrorCircleIcon from "../../assets/icons/error-circle.svg?react";
@@ -22,15 +22,15 @@ type Props = {
 const throwOnError = false;
 
 export function HealthChecks({ online, onStepValid }: Props) {
-  const archivist = useDebug(throwOnError);
-  const portForwarding = usePortForwarding(archivist.data);
-  const persistence = usePersistence(archivist.isSuccess);
+  const promethei = useDebug(throwOnError);
+  const portForwarding = usePortForwarding(promethei.data);
+  const persistence = usePersistence(promethei.isSuccess);
   const [isAddressInvalid, setIsAddressInvalid] = useState(false);
   const [isPortInvalid, setIsPortInvalid] = useState(false);
   const [address, setAddress] = useState(
-    HealthCheckUtils.removePort(ArchivistSdk.url())
+    HealthCheckUtils.removePort(PrometheiSdk.url())
   );
-  const [port, setPort] = useState(HealthCheckUtils.getPort(ArchivistSdk.url()));
+  const [port, setPort] = useState(HealthCheckUtils.getPort(PrometheiSdk.url()));
   const queryClient = useQueryClient();
 
   useEffect(
@@ -38,12 +38,12 @@ export function HealthChecks({ online, onStepValid }: Props) {
       persistence.refetch();
       portForwarding.refetch();
 
-      onStepValid(archivist.isSuccess);
+      onStepValid(promethei.isSuccess);
     },
     // We really do not want to add persistence and portForwarding as
     // dependencies because it will cause a re-render every time.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [persistence.refetch, onStepValid, portForwarding.refetch, archivist.isSuccess]
+    [persistence.refetch, onStepValid, portForwarding.refetch, promethei.isSuccess]
   );
 
   const onAddressChange = (e: React.FormEvent<HTMLInputElement>) => {
@@ -80,9 +80,9 @@ export function HealthChecks({ online, onStepValid }: Props) {
       return;
     }
 
-    ArchivistSdk.updateURL(url)
+    PrometheiSdk.updateURL(url)
       .then(() => queryClient.invalidateQueries())
-      .then(() => archivist.refetch());
+      .then(() => promethei.refetch());
   };
 
   return (
@@ -90,7 +90,7 @@ export function HealthChecks({ online, onStepValid }: Props) {
       <div
         className={classnames(
           ["address"],
-          ["address--fetching", portForwarding.isFetching || archivist.isPending]
+          ["address--fetching", portForwarding.isFetching || promethei.isPending]
         )}>
         <div>
           <Input
@@ -151,15 +151,15 @@ export function HealthChecks({ online, onStepValid }: Props) {
         </li>
         <li>
           <span>
-            {archivist.isFetching ? (
+            {promethei.isFetching ? (
               <Spinner></Spinner>
-            ) : archivist.isSuccess ? (
+            ) : promethei.isSuccess ? (
               <SuccessCircleIcon width={16} height={16}></SuccessCircleIcon>
             ) : (
               <ErrorCircleIcon width={16} height={16} />
             )}
           </span>
-          Archivist connection
+          Promethei connection
         </li>
         <li>
           <span>

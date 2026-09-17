@@ -1,4 +1,4 @@
-import { Cell, Tooltip } from "@durability-labs/archivist-app-components";
+import { Cell, Tooltip } from "@promethei-project/promethei-app-components";
 import "./TruncateCell.css";
 
 type Props = {

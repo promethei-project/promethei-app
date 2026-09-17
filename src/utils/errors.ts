@@ -1,8 +1,8 @@
 import * as Sentry from "@sentry/browser";
-import { ArchivistError } from "@durability-labs/archivist-sdk-js";
+import { PrometheiError } from "@promethei-project/promethei-sdk-js";
 
 export const Errors = {
-    report(safe: { error: true, data: ArchivistError }) {
+    report(safe: { error: true, data: PrometheiError }) {
         if (safe.data.code === 502) {
             // Ignore Gateway error 
             return

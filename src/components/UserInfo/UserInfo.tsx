@@ -1,6 +1,6 @@
 import { ChangeEvent, useState } from "react";
 import "./UserInfo.css";
-import { Input } from "@durability-labs/archivist-app-components";
+import { Input } from "@promethei-project/promethei-app-components";
 import EmojiPicker, {
   EmojiClickData,
   EmojiStyle,

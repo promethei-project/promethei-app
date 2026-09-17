@@ -3,20 +3,20 @@ import {
   Cell,
   Table,
   TabSortState,
-} from "@durability-labs/archivist-app-components";
+} from "@promethei-project/promethei-app-components";
 import { Times } from "../../utils/times";
 import { CustomStateCellRender } from "../CustomStateCellRender/CustomStateCellRender";
 import { TruncateCell } from "../TruncateCell/TruncateCell";
-import { ArchivistPurchase } from "@durability-labs/archivist-sdk-js";
+import { PrometheiPurchase } from "@promethei-project/promethei-sdk-js";
 import PurchaseHistoryIcon from "../../assets/icons/purchase-history-outline.svg?react";
 import { useState } from "react";
 import { PurchaseUtils } from "../Purchase/purchase.utils";
 
 type Props = {
-  purchases: ArchivistPurchase[];
+  purchases: PrometheiPurchase[];
 };
 
-type SortFn = (a: ArchivistPurchase, b: ArchivistPurchase) => number;
+type SortFn = (a: PrometheiPurchase, b: PrometheiPurchase) => number;
 
 export function PurchaseHistory({ purchases }: Props) {
   const [sortFn, setSortFn] = useState<SortFn>(() =>

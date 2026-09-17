@@ -1,4 +1,4 @@
-import { Backdrop, ButtonIcon } from "@durability-labs/archivist-app-components";
+import { Backdrop, ButtonIcon } from "@promethei-project/promethei-app-components";
 import "./FolderButton.css";
 import { useState } from "react";
 import { attributes } from "../../utils/attributes";

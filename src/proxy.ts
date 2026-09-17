@@ -1,16 +1,16 @@
 import {
-  ArchivistCreateStorageRequestInput,
-  ArchivistData,
-  ArchivistMarketplace,
+  PrometheiCreateStorageRequestInput,
+  PrometheiData,
+  PrometheiMarketplace,
   SafeValue,
-} from "@durability-labs/archivist-sdk-js";
-import { ArchivistSdk as Sdk } from "./sdk/archivist";
+} from "@promethei-project/promethei-sdk-js";
+import { PrometheiSdk as Sdk } from "./sdk/promethei";
 import { WebStorage } from "./utils/web-storage";
 
-class ArchivistDataMock extends ArchivistData {}
+class PrometheiDataMock extends PrometheiData {}
 
-class ArchivistMarketplaceMock extends ArchivistMarketplace {
-  // override async purchases(): Promise<SafeValue<ArchivistPurchase[]>> {
+class PrometheiMarketplaceMock extends PrometheiMarketplace {
+  // override async purchases(): Promise<SafeValue<PrometheiPurchase[]>> {
   //   const res = await super.purchases()
 
   //   if (res.error) {
@@ -34,7 +34,7 @@ class ArchivistMarketplaceMock extends ArchivistMarketplace {
    * using a REST API call.
    */
   override async createStorageRequest(
-    input: ArchivistCreateStorageRequestInput
+    input: PrometheiCreateStorageRequestInput
   ): Promise<SafeValue<string>> {
     console.info(input);
     const res = await super.createStorageRequest(input);
@@ -52,7 +52,7 @@ class ArchivistMarketplaceMock extends ArchivistMarketplace {
   }
 
   // override createStorageRequest(
-  //   input: ArchivistCreateStorageRequestInput
+  //   input: PrometheiCreateStorageRequestInput
   // ): Promise<SafeValue<string>> {
   //   return Promise.resolve({
   //     error: true,
@@ -62,7 +62,7 @@ class ArchivistMarketplaceMock extends ArchivistMarketplace {
   //   });
   // }
   // override createAvailability(): Promise<
-  //   SafeValue<ArchivistAvailabilityCreateResponse>
+  //   SafeValue<PrometheiAvailabilityCreateResponse>
   // > {
   //   return Promise.resolve({
   //     error: true,
@@ -71,7 +71,7 @@ class ArchivistMarketplaceMock extends ArchivistMarketplace {
   //     },
   //   });
   // }
-  // override reservations(): Promise<SafeValue<ArchivistReservation[]>> {
+  // override reservations(): Promise<SafeValue<PrometheiReservation[]>> {
   //   return Promise.resolve({
   //     error: false,
   //     data: [
@@ -105,7 +105,7 @@ class ArchivistMarketplaceMock extends ArchivistMarketplace {
   //   });
   // }
 
-  // override reservations(): Promise<SafeValue<ArchivistReservation[]>> {
+  // override reservations(): Promise<SafeValue<PrometheiReservation[]>> {
   //   return Promise.resolve({
   //     error: false,
   //     data: [
@@ -134,8 +134,8 @@ class ArchivistMarketplaceMock extends ArchivistMarketplace {
   // }
 }
 
-export const ArchivistSdk = {
+export const PrometheiSdk = {
   ...Sdk,
-  marketplace: () => new ArchivistMarketplaceMock(ArchivistSdk.url()),
-  data: () => new ArchivistDataMock(ArchivistSdk.url()),
+  marketplace: () => new PrometheiMarketplaceMock(PrometheiSdk.url()),
+  data: () => new PrometheiDataMock(PrometheiSdk.url()),
 };

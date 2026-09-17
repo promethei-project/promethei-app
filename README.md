@@ -1,6 +1,6 @@
-# Archivist App
+# Promethei App
 
-This project provide Marketplace UI for Archivist.
+This project provide Marketplace UI for Promethei.
 
 ## Philosophy
 
@@ -21,7 +21,7 @@ npm install
 ## Run
 
 ```
-export VITE_ARCHIVIST_API_URL="http://127.0.0.1:8080"
+export VITE_PROMETHEI_API_URL="http://127.0.0.1:8080"
 
 npm run dev
 ```

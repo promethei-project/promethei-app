@@ -1,5 +1,5 @@
-import { Upload } from "@durability-labs/archivist-app-components";
-import { ArchivistSdk } from "../../sdk/archivist";
+import { Upload } from "@promethei-project/promethei-app-components";
+import { PrometheiSdk } from "../../sdk/promethei";
 import { useQueryClient } from "@tanstack/react-query";
 import UploadIcon from "../../assets/icons/upload.svg?react";
 import { FilesUtils } from "../Files/files.utils";
@@ -16,7 +16,7 @@ export function UploadCard() {
     <main>
       <Upload
         multiple
-        archivistData={ArchivistSdk.data()}
+        prometheiData={PrometheiSdk.data()}
         onSuccess={onSuccess}
         Icon={() => <UploadIcon width={40} color={"#96969666"} />}
       />

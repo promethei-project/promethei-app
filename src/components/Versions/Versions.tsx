@@ -9,7 +9,7 @@ const throwOnError = false;
 export function Versions() {
   const debug = useDebug(throwOnError);
 
-  const version = VersionsUtil.clientVersion(debug.data?.archivist.version);
+  const version = VersionsUtil.clientVersion(debug.data?.promethei.version);
 
   return (
     <div className="versions">
@@ -20,7 +20,7 @@ export function Versions() {
       </div>
       <div>
         <p>Vault</p>
-        <small>VER. {VersionsUtil.archivistVersion()}</small>
+        <small>VER. {VersionsUtil.prometheiVersion()}</small>
         <AlphaText color="rgb(204, 108, 108)" width={37}></AlphaText>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { InputGroup, Tooltip } from "@durability-labs/archivist-app-components";
+import { InputGroup, Tooltip } from "@promethei-project/promethei-app-components";
 import "../CardNumbers/CardNumbers.css";
 import "./Commitment.css";
 

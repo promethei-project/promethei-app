@@ -1,7 +1,7 @@
 import { assert, describe, it } from "vitest";
 import { AvailabilityUtils } from "./availability.utils";
 import { GB, TB } from "../../utils/constants";
-import { ArchivistNodeSpace } from "@durability-labs/archivist-sdk-js";
+import { PrometheiNodeSpace } from "@promethei-project/promethei-sdk-js";
 import { AvailabilityState } from "./types";
 
 describe("files", () => {
@@ -196,7 +196,7 @@ describe("files", () => {
   });
 
   it("returns the max value possible for an availability", async () => {
-    const space: ArchivistNodeSpace = {
+    const space: PrometheiNodeSpace = {
       quotaMaxBytes: 8 * GB,
       quotaReservedBytes: 2 * GB,
       quotaUsedBytes: GB,

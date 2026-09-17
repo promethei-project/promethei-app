@@ -3,7 +3,7 @@ import {
   Row,
   Cell,
   Table,
-} from "@durability-labs/archivist-app-components";
+} from "@promethei-project/promethei-app-components";
 import { useCallback, useState } from "react";
 import { PeerCountryCell } from "../../components/Peers/PeerCountryCell";
 import "./peers.css";

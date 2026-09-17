@@ -1,4 +1,4 @@
-import { ArchivistSdk } from "../../sdk/archivist";
+import { PrometheiSdk } from "../../sdk/promethei";
 import "./StorageRequestFileChooser.css";
 import { ChangeEvent, useEffect } from "react";
 import {
@@ -6,7 +6,7 @@ import {
   DropdownOption,
   Upload,
   WebFileIcon,
-} from "@durability-labs/archivist-app-components";
+} from "@promethei-project/promethei-app-components";
 import { useData } from "../../hooks/useData";
 import { StorageRequestComponentProps } from "./types";
 import { useQueryClient } from "@tanstack/react-query";
@@ -92,7 +92,7 @@ export function StorageRequestFileChooser({
         editable={false}
         multiple={false}
         onDeleteItem={onDelete}
-        archivistData={ArchivistSdk.data()}
+        prometheiData={PrometheiSdk.data()}
         successMessage={"Success, the CID has been copied to the field on top."}
       />
     </div>

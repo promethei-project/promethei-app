@@ -3,14 +3,14 @@ import {
   Cell,
   Toast,
   WebFileIcon,
-} from "@durability-labs/archivist-app-components";
-import { ArchivistDataContent } from "@durability-labs/archivist-sdk-js";
+} from "@promethei-project/promethei-app-components";
+import { PrometheiDataContent } from "@promethei-project/promethei-sdk-js";
 import { useState } from "react";
 import "./FileCell.css";
 import CopyIcon from "../../assets/icons/copy.svg?react";
 
 type Props = {
-  content: ArchivistDataContent;
+  content: PrometheiDataContent;
 };
 
 export function FileCell({ content }: Props) {

@@ -1,19 +1,19 @@
 import { useQuery } from "@tanstack/react-query";
-import { ArchivistSdk } from "../sdk/archivist";
-import { ArchivistDataResponse } from "@durability-labs/archivist-sdk-js";
+import { PrometheiSdk } from "../sdk/promethei";
+import { PrometheiDataResponse } from "@promethei-project/promethei-sdk-js";
 import { Promises } from "../utils/promises";
 import { FilesUtils } from "../components/Files/files.utils";
 
 export function useData() {
-  const { data = { content: [] } satisfies ArchivistDataResponse } =
-    useQuery<ArchivistDataResponse>({
+  const { data = { content: [] } satisfies PrometheiDataResponse } =
+    useQuery<PrometheiDataResponse>({
       queryFn: () =>
-        ArchivistSdk.data()
+        PrometheiSdk.data()
           .cids()
           .then((res) => Promises.rejectOnError(res)),
       queryKey: ["cids"],
 
-      initialData: { content: [] } satisfies ArchivistDataResponse,
+      initialData: { content: [] } satisfies PrometheiDataResponse,
 
       // No need to retry because if the connection to the node
       // is back again, all the queries will be invalidated.

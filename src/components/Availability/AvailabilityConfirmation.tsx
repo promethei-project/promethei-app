@@ -2,7 +2,7 @@ import "./AvailabilityConfirm.css";
 import { AvailabilityComponentProps } from "./types";
 import "./AvailabilityConfirm.css";
 import { useEffect } from "react";
-import { SpaceAllocation } from "@durability-labs/archivist-app-components";
+import { SpaceAllocation } from "@promethei-project/promethei-app-components";
 import NodesIcon from "../../assets/icons/nodes.svg?react";
 import InfoIcon from "../../assets/icons/info.svg?react";
 

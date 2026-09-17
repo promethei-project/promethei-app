@@ -1,14 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
-import { ArchivistSdk } from "../sdk/archivist";
+import { PrometheiSdk } from "../sdk/promethei";
 import { Promises } from "../utils/promises";
 
 const report = false;
 
-export function useArchivistConnection() {
+export function usePrometheiConnection() {
   const { data, isError, isFetching, refetch } = useQuery({
     queryKey: ["spr"],
     queryFn: async () => {
-      return ArchivistSdk.node()
+      return PrometheiSdk.node()
         .spr()
         .then((data) => Promises.rejectOnError(data, report));
     },

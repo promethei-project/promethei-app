@@ -2,10 +2,10 @@ import {
   Backdrop,
   ButtonIcon,
   Cell,
-} from "@durability-labs/archivist-app-components";
+} from "@promethei-project/promethei-app-components";
 import { FolderButton } from "./FolderButton";
-import { ArchivistDataContent } from "@durability-labs/archivist-sdk-js";
-import { ArchivistSdk } from "../../sdk/archivist";
+import { PrometheiDataContent } from "@promethei-project/promethei-sdk-js";
+import { PrometheiSdk } from "../../sdk/promethei";
 import "./FileActions.css";
 import DownloadIcon from "../../assets/icons/download-file.svg?react";
 import InfoFileIcon from "../../assets/icons/info-file.svg?react";
@@ -16,7 +16,7 @@ import { attributes } from "../../utils/attributes";
 import CopyIcon from "../../assets/icons/copy.svg?react";
 
 type Props = {
-  content: ArchivistDataContent;
+  content: PrometheiDataContent;
   folders: [string, string[]][];
   onFolderToggle: (cid: string, folder: string) => void;
   onDetails: (cid: string) => void;
@@ -29,7 +29,7 @@ export function FileActions({
   onDetails,
 }: Props) {
   const isMobile = useIsMobile();
-  const url = ArchivistSdk.url() + "/api/archivist/v1/data/";
+  const url = PrometheiSdk.url() + "/api/promethei/v1/data/";
   const [isExpanded, setIsExpanded] = useState(false);
 
   const onClose = () => setIsExpanded(false);

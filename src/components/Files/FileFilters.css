@@ -25,11 +25,11 @@
   }
 
   &.filter--active {
-    border-color: var(--archivist-color-primary);
-    color: var(--archivist-color-primary);
+    border-color: var(--promethei-color-primary);
+    color: var(--promethei-color-primary);
 
     svg {
-      color: var(--archivist-color-primary);
+      color: var(--promethei-color-primary);
     }
   }
 }

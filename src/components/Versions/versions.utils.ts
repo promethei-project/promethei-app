@@ -1,5 +1,5 @@
 export const VersionsUtil = {
-    archivistVersion: () => import.meta.env.PACKAGE_VERSION,
+    prometheiVersion: () => import.meta.env.PACKAGE_VERSION,
 
     clientVersion: (version: string | undefined) => {
         const parts = version?.split("\n") || [""];

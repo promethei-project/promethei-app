@@ -9,7 +9,7 @@ import {
   Modal,
   Stepper,
   useStepperReducer,
-} from "@durability-labs/archivist-app-components";
+} from "@promethei-project/promethei-app-components";
 import { StorageRequestSuccess } from "./StorageRequestSuccess";
 import { Times } from "../../utils/times";
 import { useStorageRequestMutation } from "./useStorageRequestMutation";

@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 env:
-  VITE_ARCHIVIST_API_URL: ${{ secrets.VITE_ARCHIVIST_API_URL }}
+  VITE_PROMETHEI_API_URL: ${{ secrets.VITE_PROMETHEI_API_URL }}
   VITE_GEO_IP_URL: ${{ secrets.VITE_GEO_IP_URL }}
 
 jobs:

@@ -8,12 +8,12 @@ on:
   workflow_dispatch:
 
 env:
-  archivist_version: v0.0.1
+  promethei_version: v0.0.1
   circuit_version: v0.0.1
   bootstrap_node_url: https://spr.archivist.storage/testnet
   eth_provider: https://rpc.testnet.archivist.storage
-  marketplace_address_url: https://marketplace.archivist.storage/archivist-testnet/latest
-  VITE_ARCHIVIST_API_URL: ${{ secrets.VITE_ARCHIVIST_API_URL }}
+  marketplace_address_url: https://marketplace.archivist.storage/promethei-testnet/latest
+  VITE_PROMETHEI_API_URL: ${{ secrets.VITE_PROMETHEI_API_URL }}
   VITE_GEO_IP_URL: ${{ secrets.VITE_GEO_IP_URL }}
 
 jobs:
@@ -47,7 +47,7 @@ jobs:
           mkdir -p datadir/circuits
           chmod 700 datadir
           chmod 700 datadir/circuits
-          curl -OL https://github.com/durability-labs/archivist-node/releases/download/${circuit_version}/cirdl-${circuit_version}-${platform}-${architecture}.tar.gz
+          curl -OL https://github.com/promethei-project/nim-promethei-node/releases/download/${circuit_version}/cirdl-${circuit_version}-${platform}-${architecture}.tar.gz
           tar -xvf cirdl-${circuit_version}-${platform}-${architecture}.tar.gz
           chmod +x cirdl-${circuit_version}-${platform}-${architecture}
           ./cirdl-${circuit_version}-${platform}-${architecture} ./datadir/circuits ${eth_provider} ${marketplace_address}
@@ -60,31 +60,31 @@ jobs:
           path: datadir/circuits
           key: ${{ steps.circuits-cache-restore.outputs.cache-primary-key }}
 
-      - name: Restore cached archivist
+      - name: Restore cached promethei
         if: false
-        id: archivist-cache-restore
+        id: promethei-cache-restore
         uses: actions/cache/restore@v4
         with:
-          path: ./archivist-${{ env.archivist_version }}-${{ env.platform }}-${{ env.architecture }}
-          key: ${{ env.archivist_version }}-archivist
+          path: ./promethei-${{ env.promethei_version }}-${{ env.platform }}-${{ env.architecture }}
+          key: ${{ env.promethei_version }}-promethei
 
-      - name: Download archivist
+      - name: Download promethei
         if: false
-        # if: steps.archivist-cache-restore.outputs.cache-hit != 'true'
+        # if: steps.promethei-cache-restore.outputs.cache-hit != 'true'
         run: |
-          curl -LO https://github.com/durability-labs/archivist-node/releases/download/${archivist_version}/archivist-${archivist_version}-${platform}-${architecture}.tar.gz
-          curl -LO https://github.com/durability-labs/archivist-node/releases/download/${archivist_version}/archivist-${archivist_version}-${platform}-${architecture}.tar.gz.sha256
-          sha256sum -c archivist-${archivist_version}-${platform}-${architecture}.tar.gz.sha256
+          curl -LO https://github.com/promethei-project/nim-promethei-node/releases/download/${promethei_version}/promethei-${promethei_version}-${platform}-${architecture}.tar.gz
+          curl -LO https://github.com/promethei-project/nim-promethei-node/releases/download/${promethei_version}/promethei-${promethei_version}-${platform}-${architecture}.tar.gz.sha256
+          sha256sum -c promethei-${promethei_version}-${platform}-${architecture}.tar.gz.sha256
           [[ $? -eq 0 ]] && { echo "Checksum is OK"; } || { echo "Checksum failed"; exit 1; }
-          tar -zxvf archivist-${archivist_version}-${platform}-${architecture}.tar.gz
+          tar -zxvf promethei-${promethei_version}-${platform}-${architecture}.tar.gz
 
-      - name: Cache archivist
+      - name: Cache promethei
         if: false
-        id: archivist-cache
+        id: promethei-cache
         uses: actions/cache/save@v4
         with:
-          path: ./archivist-${{ env.archivist_version }}-${{ env.platform }}-${{ env.architecture }}
-          key: ${{ steps.archivist-cache-restore.outputs.cache-primary-key }}
+          path: ./promethei-${{ env.promethei_version }}-${{ env.platform }}-${{ env.architecture }}
+          key: ${{ steps.promethei-cache-restore.outputs.cache-primary-key }}
 
       - name: Run Codex node
         if: false
@@ -96,14 +96,14 @@ jobs:
           chmod 600 eth.key
 
           # Run 
-          ./archivist-${archivist_version}-${platform}-${architecture} --data-dir=./datadir --bootstrap-node=${bootstrap_node} --nat=any --disc-port=8090 --api-cors-origin="*" persistence --eth-provider=${eth_provider} --eth-private-key=./eth.key --marketplace-address=${marketplace_address} &
+          ./promethei-${promethei_version}-${platform}-${architecture} --data-dir=./datadir --bootstrap-node=${bootstrap_node} --nat=any --disc-port=8090 --api-cors-origin="*" persistence --eth-provider=${eth_provider} --eth-private-key=./eth.key --marketplace-address=${marketplace_address} &
 
           sleep 15
 
       - name: Check Codex API
         if: false
         run: |
-          curl --max-time 10 --fail localhost:8080/api/archivist/v1/debug/info -w "\n"
+          curl --max-time 10 --fail localhost:8080/api/promethei/v1/debug/info -w "\n"
           [[ $? -eq 0 ]] && { echo "Codex node is up"; } || { echo "Please check Codex node"; exit 1; }
 
       - uses: actions/checkout@v4

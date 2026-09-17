@@ -6,7 +6,7 @@ test.describe("onboarding", () => {
     await page.goto("/");
     await expect(
       page.getByText(
-        "Archivist is a durable, decentralised data storage protocol, created so the world community can preserve its most important knowledge without risk of censorship."
+        "Promethei is a durable, decentralised data storage protocol, created so the world community can preserve its most important knowledge without risk of censorship."
       )
     ).toBeVisible();
     await page.locator(".navigation").click();
@@ -33,7 +33,7 @@ test.describe("onboarding", () => {
       page.locator(".health-checks ul li").nth(2).getByTestId("icon-success")
     ).toBeVisible();
 
-    // Archivist node
+    // Promethei node
     await expect(
       page.locator(".health-checks ul li").nth(2).getByTestId("icon-error")
     ).not.toBeVisible();
