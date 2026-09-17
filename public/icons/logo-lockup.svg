@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Archivist Lockup (Horizontal)
+  Promethei Lockup (Horizontal)
   Symbol + Wordmark - Terminal Aesthetic
 -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 80" width="520" height="80">
@@ -41,5 +41,5 @@
   </g>
 
   <!-- Wordmark -->
-  <text x="100" y="52" class="wordmark" fill="#00ff41">ARCHIVIST</text>
+  <text x="100" y="52" class="wordmark" fill="#00ff41">PROMETHEI</text>
 </svg>

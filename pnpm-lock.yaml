@@ -8,10 +8,10 @@ importers:
 
   .:
     dependencies:
-      '@durability-labs/archivist-app-components':
+      '@promethei-project/promethei-app-components':
         specifier: ^0.0.1
-        version: 0.0.1(@durability-labs/archivist-sdk-js@0.0.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@durability-labs/archivist-sdk-js':
+        version: 0.0.1(@promethei-project/promethei-sdk-js@0.0.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@promethei-project/promethei-sdk-js':
         specifier: ^0.0.2
         version: 0.0.2
       '@sentry/browser':
@@ -282,15 +282,15 @@ packages:
     peerDependencies:
       postcss-selector-parser: ^7.0.0
 
-  '@durability-labs/archivist-app-components@0.0.1':
+  '@promethei-project/promethei-app-components@0.0.1':
     resolution: {integrity: sha512-DRRGrqCQM2CTyiUx2LwbsC3TDeJxSEOYwgraaa815Z9bSRE0m9TrpbqHKcgdwFiGucKBJPO0928Rta+rL/psTA==}
     engines: {node: '>=18'}
     peerDependencies:
-      '@durability-labs/archivist-sdk-js': '>=0.0.2'
+      '@promethei-project/promethei-sdk-js': '>=0.0.2'
       react: ^18.3.1
       react-dom: ^18.3.1
 
-  '@durability-labs/archivist-sdk-js@0.0.2':
+  '@promethei-project/promethei-sdk-js@0.0.2':
     resolution: {integrity: sha512-rNEDoxxLFT/eYl4IWyZw8iQXieouNShiJkCBmYFf8kg8mTO2dHo4MuAq1rZ0l7w+nya57ZJkbMUZiR6m7cmFCQ==}
     engines: {node: '>=20'}
 
@@ -2381,13 +2381,13 @@ snapshots:
     dependencies:
       postcss-selector-parser: 7.1.1
 
-  '@durability-labs/archivist-app-components@0.0.1(@durability-labs/archivist-sdk-js@0.0.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@promethei-project/promethei-app-components@0.0.1(@promethei-project/promethei-sdk-js@0.0.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@durability-labs/archivist-sdk-js': 0.0.2
+      '@promethei-project/promethei-sdk-js': 0.0.2
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@durability-labs/archivist-sdk-js@0.0.2':
+  '@promethei-project/promethei-sdk-js@0.0.2':
     dependencies:
       valibot: 0.32.0
 
